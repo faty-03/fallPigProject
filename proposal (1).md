@@ -1,6 +1,7 @@
 # Proposal
 
 ## What will (likely) be the title of your project?
+Pig
 
 TODO
 
