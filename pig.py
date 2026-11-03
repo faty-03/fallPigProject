@@ -7,6 +7,7 @@ def pigTurn():
     rollOne = False  
     while turnTotal < 20 and not rollOne:
         dice = roll()
+        print("Roll:", dice)
         if dice == 1:
             turnTotal = 0
             rollOne = True
