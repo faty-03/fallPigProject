@@ -7,13 +7,13 @@ def pigTurn(target = 20, score = 0,):
     rolledOne = False  
     while turnTotal < target and turnTotal + score < 100 and not rolledOne:
         dice = roll()
-        print("Roll:",dice)
+        #print("Roll:",dice)
         if dice == 1:
              turnTotal = 0
              rolledOne = True
         else:
              turnTotal += dice
-    print("Turn total:",turnTotal)
+    #print("Turn total:",turnTotal)
     return turnTotal
 def holdAt20Sims(trials):
     results = {0:0}
@@ -44,12 +44,29 @@ def part4Test(score):
         score = score + pigTurn(20,score)
         print("Score:", score)
         print()
-def solitaireGame():
+def solitaireGame(target = 20):
     score = 0
+    turns = 0
     while score < 100:
-        score = score + pigTurn(20,score)
-        print("Score:", score)
-        print()
-part4Test(23)
+        score = score + pigTurn(target,score)
+        turns += 1
+        #print("Score:", score)
+        #print()
+    return turns
+def avgTurn(trials, target = 20):
+    totalTurns = 0
+    #print(totalTurns/trials)
+    for _ in range(trials):
+        totalTurns += solitaireGame(target)
+    print(target,totalTurns/trials,sep="\t")
+for target in range(5,50):
+    avgTurn(100000,target)
+
+
+#avgTurn(10000,10)
+
+#solitaireGame()
+
+##part4Test(23)
 
 #holdAtXSims(100000,25)
