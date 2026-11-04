@@ -44,6 +44,12 @@ def part4Test(score):
         score = score + pigTurn(20,score)
         print("Score:", score)
         print()
+def solitaireGame():
+    score = 0
+    while score < 100:
+        score = score + pigTurn(20,score)
+        print("Score:", score)
+        print()
 part4Test(23)
 
 #holdAtXSims(100000,25)
